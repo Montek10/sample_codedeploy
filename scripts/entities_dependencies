@@ -1,0 +1,17 @@
+#!/bin/bash
+
+datetime1=$(find /home/src/sample_codedeploy -type f -exec stat \{} --printf="%Y\n" \; | sort -n -r | head -n 1)
+datetime2=$(date +"%s")
+
+delta=$((datetime2 - datetime1))
+
+if [[ $delta > 60 ]]; then
+
+sudo nginx -t;
+
+if [[ $? == 0 ]]; then
+sudo service nginx restart
+sudo service php5.6-fpm reload
+
+fi
+fi
