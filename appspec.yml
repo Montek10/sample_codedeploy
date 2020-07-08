@@ -15,7 +15,6 @@ hooks:
     - location: scripts/entities_dependencies
       timeout: 300
       runas: root
-  BeforeInstall:
     - location: scripts/cache_dependencies
       timeout: 300
       runas: root
