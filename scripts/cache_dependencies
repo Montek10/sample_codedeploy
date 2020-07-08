@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rm /home/src/sample_codedeploy/my_temp_cache/*
